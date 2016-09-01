@@ -1,0 +1,74 @@
+github 详细操作 : https://github.com/lavor-zl/Github-Git
+
+git 高级教程： http://mp.weixin.qq.com/s?__biz=MzA3OTgyMDcwNg==&mid=2650625356&idx=1&sn=32e5a0550b08fab554edb5f31cfd54a5&scene=2&srcid=0608JkN5HRfOV5POEyd2tClo&from=timeline&isappinstalled=0#wechat_redirect
+
+
+Q:配置用户名和密码
+
+    git config --global user.name "strugglingyouth"
+    git config --global user.email "630441839@qq.com"
+    git config --list
+    git config --global color.ui true
+
+Q: 绑定远程分支，不用每次pull或push时指定
+
+    git config branch.master.remote origin
+    git config branch.master.merge refs/heads/master
+
+Q:合并远程分支到当前分支
+
+    git merge origin/master 
+    # 或者
+    $ git rebase origin/master
+
+Q:删除追踪状态的文件
+    
+    git rm --cached *.pyc
+    
+Q:
+
+今天使用girhub的pages功能搞了一个blog,用了github提供的主题,当我将其git clone下来的时候,出现:
+
+    # On branch master
+    # Changed but not updated:
+        #   (use "git add <file>..." to update what will be committed)
+        #   (use "git checkout -- <file>..." to discard changes in working directory)
+        #
+        #       modified:   fonts/OpenSans-Bold-webfont.eot
+        #       modified:   fonts/OpenSans-Bold-webfont.svg
+        #       modified:   fonts/OpenSans-Bold-webfont.ttf
+        #       modified:   fonts/OpenSans-Bold-webfont.woff
+        #       modified:   fonts/OpenSans-BoldItalic-webfont.eot
+        #       modified:   fonts/OpenSans-BoldItalic-webfont.svg
+        #       modified:   fonts/OpenSans-BoldItalic-webfont.ttf
+        #       modified:   fonts/OpenSans-BoldItalic-webfont.woff
+        #       modified:   fonts/OpenSans-Italic-webfont.eot
+        #       modified:   fonts/OpenSans-Italic-webfont.svg
+        #       modified:   fonts/OpenSans-Italic-webfont.ttf
+        #       modified:   fonts/OpenSans-Italic-webfont.woff
+        #       modified:   fonts/OpenSans-Regular-webfont.eot
+        #       modified:   fonts/OpenSans-Regular-webfont.svg
+        #       modified:   fonts/OpenSans-Regular-webfont.ttf
+        #       modified:   fonts/OpenSans-Regular-webfont.woff
+        # no changes added to commit (use "git add" and/or "git commit -a")
+
+
+A: git add -A 
+    
+
+Q:本地有修改，需要使用远程的覆盖本地
+
+A：正确的做法应该是：
+
+git fetch --all
+git reset --hard origin/master
+
+
+
+
+
+
+
+
+
+
